@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SCANBsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Apresentador">
+    <Key>
+      <PropertyRef Name="IdPessoaApresentador" />
+    </Key>
+    <Property Name="IdPessoaApresentador" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Pessoa" Relationship="Self.FK_Apresentador_Pessoa" FromRole="Apresentador" ToRole="Pessoa" />
+    <NavigationProperty Name="IngressoApresentador" Relationship="Self.FK_IngressoApresentador_Apresentador" FromRole="Apresentador" ToRole="IngressoApresentador" />
+    <NavigationProperty Name="Veiculo" Relationship="Self.FK_Veiculo_Apresentador" FromRole="Apresentador" ToRole="Veiculo" />
+    <NavigationProperty Name="Veiculo1" Relationship="Self.FK_Veiculo_Veiculo" FromRole="Apresentador" ToRole="Veiculo" />
+    <NavigationProperty Name="Atracao" Relationship="Self.ApresentadorAtracao" FromRole="Apresentador" ToRole="Atracao" />
+  </EntityType>
+  <EntityType Name="Atracao">
+    <Key>
+      <PropertyRef Name="IdAtracao" />
+    </Key>
+    <Property Name="IdAtracao" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEvento" Type="Int16" Nullable="false" />
+    <Property Name="ImagemAtracao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NomeAtracao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Evento" Relationship="Self.FK_Atracao_Evento" FromRole="Atracao" ToRole="Evento" />
+    <NavigationProperty Name="Apresentador" Relationship="Self.ApresentadorAtracao" FromRole="Atracao" ToRole="Apresentador" />
+  </EntityType>
+  <EntityType Name="Cargo">
+    <Key>
+      <PropertyRef Name="IdCargo" />
+    </Key>
+    <Property Name="IdCargo" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DescricaoCargo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Funcionario" Relationship="Self.FK_Funcionario_Cargo" FromRole="Cargo" ToRole="Funcionario" />
+  </EntityType>
+  <EntityType Name="Espectador">
+    <Key>
+      <PropertyRef Name="IdPessoaEspectador" />
+    </Key>
+    <Property Name="IdPessoaEspectador" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Pessoa" Relationship="Self.FK_Espectador_Pessoa" FromRole="Espectador" ToRole="Pessoa" />
+    <NavigationProperty Name="IngressoEspectador" Relationship="Self.FK_IngressoEspectador_Espectador" FromRole="Espectador" ToRole="IngressoEspectador" />
+  </EntityType>
+  <EntityType Name="Evento">
+    <Key>
+      <PropertyRef Name="IdEvento" />
+    </Key>
+    <Property Name="IdEvento" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomeEvento" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DataInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataFinal" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ImagemEvento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ValorSugestivoApresentador" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ValorSugestivoEspectador" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Atracao" Relationship="Self.FK_Atracao_Evento" FromRole="Evento" ToRole="Atracao" />
+    <NavigationProperty Name="IngressoApresentador" Relationship="Self.FK_IngressoApresentador_Evento" FromRole="Evento" ToRole="IngressoApresentador" />
+    <NavigationProperty Name="IngressoEspectador" Relationship="Self.FK_IngressoEspectador_Evento" FromRole="Evento" ToRole="IngressoEspectador" />
+    <NavigationProperty Name="OrganizadorEvento" Relationship="Self.FK_OrganizadorEvento_Evento" FromRole="Evento" ToRole="OrganizadorEvento" />
+  </EntityType>
+  <EntityType Name="Funcionario">
+    <Key>
+      <PropertyRef Name="IdPessoaFuncionario" />
+    </Key>
+    <Property Name="IdPessoaFuncionario" Type="Int16" Nullable="false" />
+    <Property Name="IdCargo" Type="Int16" />
+    <NavigationProperty Name="Cargo" Relationship="Self.FK_Funcionario_Cargo" FromRole="Funcionario" ToRole="Cargo" />
+    <NavigationProperty Name="Pessoa" Relationship="Self.FK_Funcionario_Pessoa" FromRole="Funcionario" ToRole="Pessoa" />
+    <NavigationProperty Name="OrganizadorEvento" Relationship="Self.FK_OrganizadorEvento_Funcionario" FromRole="Funcionario" ToRole="OrganizadorEvento" />
+    <NavigationProperty Name="OrganizadorEvento1" Relationship="Self.FK_OrganizadorEvento_Funcionario1" FromRole="Funcionario" ToRole="OrganizadorEvento" />
+    <NavigationProperty Name="Pagamento" Relationship="Self.FK_Pagamento_Funcionario" FromRole="Funcionario" ToRole="Pagamento" />
+  </EntityType>
+  <EntityType Name="IngressoApresentador">
+    <Key>
+      <PropertyRef Name="IdIngressoApresentador" />
+    </Key>
+    <Property Name="IdIngressoApresentador" Type="Int16" Nullable="false" />
+    <Property Name="IdPessoaApresentador" Type="Int16" Nullable="false" />
+    <Property Name="IdPagamento" Type="Int16" Nullable="false" />
+    <Property Name="IdEvento" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Apresentador" Relationship="Self.FK_IngressoApresentador_Apresentador" FromRole="IngressoApresentador" ToRole="Apresentador" />
+    <NavigationProperty Name="Evento" Relationship="Self.FK_IngressoApresentador_Evento" FromRole="IngressoApresentador" ToRole="Evento" />
+    <NavigationProperty Name="Pagamento" Relationship="Self.FK_IngressoApresentador_Pagamento" FromRole="IngressoApresentador" ToRole="Pagamento" />
+  </EntityType>
+  <EntityType Name="IngressoEspectador">
+    <Key>
+      <PropertyRef Name="IdIngressoEspectador" />
+    </Key>
+    <Property Name="IdIngressoEspectador" Type="Int16" Nullable="false" />
+    <Property Name="IdEvento" Type="Int16" Nullable="false" />
+    <Property Name="IdPessoaEspectador" Type="Int16" Nullable="false" />
+    <Property Name="IdPagamento" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Espectador" Relationship="Self.FK_IngressoEspectador_Espectador" FromRole="IngressoEspectador" ToRole="Espectador" />
+    <NavigationProperty Name="Evento" Relationship="Self.FK_IngressoEspectador_Evento" FromRole="IngressoEspectador" ToRole="Evento" />
+    <NavigationProperty Name="Pagamento" Relationship="Self.FK_IngressoEspectador_Pagamento" FromRole="IngressoEspectador" ToRole="Pagamento" />
+  </EntityType>
+  <EntityType Name="Organizador">
+    <Key>
+      <PropertyRef Name="IdPessoaOrganizador" />
+    </Key>
+    <Property Name="IdPessoaOrganizador" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Pessoa" Relationship="Self.FK_Organizador_Pessoa" FromRole="Organizador" ToRole="Pessoa" />
+    <NavigationProperty Name="OrganizadorEvento" Relationship="Self.FK_OrganizadorEvento_Organizador" FromRole="Organizador" ToRole="OrganizadorEvento" />
+  </EntityType>
+  <EntityType Name="OrganizadorEvento">
+    <Key>
+      <PropertyRef Name="IdPessoaOrganizador" />
+      <PropertyRef Name="IdEvento" />
+    </Key>
+    <Property Name="IdPessoaOrganizador" Type="Int16" Nullable="false" />
+    <Property Name="IdEvento" Type="Int16" Nullable="false" />
+    <Property Name="DataInicioVinculo" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataFimVinculo" Type="DateTime" Precision="3" />
+    <Property Name="IdPessoaFuncionarioVinculo" Type="Int16" />
+    <Property Name="IdPessoaFuncionarioDesvinculo" Type="Int16" />
+    <NavigationProperty Name="Evento" Relationship="Self.FK_OrganizadorEvento_Evento" FromRole="OrganizadorEvento" ToRole="Evento" />
+    <NavigationProperty Name="Funcionario" Relationship="Self.FK_OrganizadorEvento_Funcionario" FromRole="OrganizadorEvento" ToRole="Funcionario" />
+    <NavigationProperty Name="Funcionario1" Relationship="Self.FK_OrganizadorEvento_Funcionario1" FromRole="OrganizadorEvento" ToRole="Funcionario" />
+    <NavigationProperty Name="Organizador" Relationship="Self.FK_OrganizadorEvento_Organizador" FromRole="OrganizadorEvento" ToRole="Organizador" />
+  </EntityType>
+  <EntityType Name="Pagamento">
+    <Key>
+      <PropertyRef Name="IdPagamento" />
+    </Key>
+    <Property Name="IdPagamento" Type="Int16" Nullable="false" />
+    <Property Name="ValorTotal" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Desconto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IdSituacaoPagamento" Type="Int16" Nullable="false" />
+    <Property Name="DataPagamento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IdPessoaFuncionario" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Funcionario" Relationship="Self.FK_Pagamento_Funcionario" FromRole="Pagamento" ToRole="Funcionario" />
+    <NavigationProperty Name="IngressoApresentador" Relationship="Self.FK_IngressoApresentador_Pagamento" FromRole="Pagamento" ToRole="IngressoApresentador" />
+    <NavigationProperty Name="IngressoEspectador" Relationship="Self.FK_IngressoEspectador_Pagamento" FromRole="Pagamento" ToRole="IngressoEspectador" />
+    <NavigationProperty Name="SituacaoPagamento" Relationship="Self.FK_Pagamento_SituacaoPagamento" FromRole="Pagamento" ToRole="SituacaoPagamento" />
+  </EntityType>
+  <EntityType Name="Pessoa">
+    <Key>
+      <PropertyRef Name="IdPessoa" />
+    </Key>
+    <Property Name="IdPessoa" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomeCompleto" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CPF" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FotoPessoa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Usuario" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Senha" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Perfil" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Apresentador" Relationship="Self.FK_Apresentador_Pessoa" FromRole="Pessoa" ToRole="Apresentador" />
+    <NavigationProperty Name="Espectador" Relationship="Self.FK_Espectador_Pessoa" FromRole="Pessoa" ToRole="Espectador" />
+    <NavigationProperty Name="Funcionario" Relationship="Self.FK_Funcionario_Pessoa" FromRole="Pessoa" ToRole="Funcionario" />
+    <NavigationProperty Name="Organizador" Relationship="Self.FK_Organizador_Pessoa" FromRole="Pessoa" ToRole="Organizador" />
+    <NavigationProperty Name="Telefone" Relationship="Self.FK_Telefone_Pessoa" FromRole="Pessoa" ToRole="Telefone" />
+    <NavigationProperty Name="Telefone1" Relationship="Self.FK_Telefone_Pessoa1" FromRole="Pessoa" ToRole="Telefone" />
+  </EntityType>
+  <EntityType Name="SituacaoPagamento">
+    <Key>
+      <PropertyRef Name="IdSituacaoPagamento" />
+    </Key>
+    <Property Name="IdSituacaoPagamento" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DescricaoSituacaoPagamento" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Pagamento" Relationship="Self.FK_Pagamento_SituacaoPagamento" FromRole="SituacaoPagamento" ToRole="Pagamento" />
+  </EntityType>
+  <EntityType Name="Telefone">
+    <Key>
+      <PropertyRef Name="IdTelefone" />
+    </Key>
+    <Property Name="IdTelefone" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumeroTelefone" Type="Int32" Nullable="false" />
+    <Property Name="IdPessoa" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Pessoa" Relationship="Self.FK_Telefone_Pessoa" FromRole="Telefone" ToRole="Pessoa" />
+    <NavigationProperty Name="Pessoa1" Relationship="Self.FK_Telefone_Pessoa1" FromRole="Telefone" ToRole="Pessoa" />
+  </EntityType>
+  <EntityType Name="Veiculo">
+    <Key>
+      <PropertyRef Name="IdVeiculo" />
+    </Key>
+    <Property Name="IdVeiculo" Type="Int16" Nullable="false" />
+    <Property Name="FotoVeiculo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IdPessoaApresentador" Type="Int16" Nullable="false" />
+    <Property Name="Marca" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Modelo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ano" Type="Int16" Nullable="false" />
+    <Property Name="Placa" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Apresentador" Relationship="Self.FK_Veiculo_Apresentador" FromRole="Veiculo" ToRole="Apresentador" />
+    <NavigationProperty Name="Apresentador1" Relationship="Self.FK_Veiculo_Veiculo" FromRole="Veiculo" ToRole="Apresentador" />
+  </EntityType>
+  <Association Name="FK_Apresentador_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Apresentador" Type="Self.Apresentador" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="IdPessoa" />
+      </Principal>
+      <Dependent Role="Apresentador">
+        <PropertyRef Name="IdPessoaApresentador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IngressoApresentador_Apresentador">
+    <End Role="Apresentador" Type="Self.Apresentador" Multiplicity="1" />
+    <End Role="IngressoApresentador" Type="Self.IngressoApresentador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apresentador">
+        <PropertyRef Name="IdPessoaApresentador" />
+      </Principal>
+      <Dependent Role="IngressoApresentador">
+        <PropertyRef Name="IdPessoaApresentador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Veiculo_Apresentador">
+    <End Role="Apresentador" Type="Self.Apresentador" Multiplicity="1" />
+    <End Role="Veiculo" Type="Self.Veiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apresentador">
+        <PropertyRef Name="IdPessoaApresentador" />
+      </Principal>
+      <Dependent Role="Veiculo">
+        <PropertyRef Name="IdPessoaApresentador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Veiculo_Veiculo">
+    <End Role="Apresentador" Type="Self.Apresentador" Multiplicity="1" />
+    <End Role="Veiculo" Type="Self.Veiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apresentador">
+        <PropertyRef Name="IdPessoaApresentador" />
+      </Principal>
+      <Dependent Role="Veiculo">
+        <PropertyRef Name="IdPessoaApresentador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Atracao_Evento">
+    <End Role="Evento" Type="Self.Evento" Multiplicity="1" />
+    <End Role="Atracao" Type="Self.Atracao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="IdEvento" />
+      </Principal>
+      <Dependent Role="Atracao">
+        <PropertyRef Name="IdEvento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Funcionario_Cargo">
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="0..1" />
+    <End Role="Funcionario" Type="Self.Funcionario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="IdCargo" />
+      </Principal>
+      <Dependent Role="Funcionario">
+        <PropertyRef Name="IdCargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Espectador_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Espectador" Type="Self.Espectador" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="IdPessoa" />
+      </Principal>
+      <Dependent Role="Espectador">
+        <PropertyRef Name="IdPessoaEspectador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IngressoEspectador_Espectador">
+    <End Role="Espectador" Type="Self.Espectador" Multiplicity="1" />
+    <End Role="IngressoEspectador" Type="Self.IngressoEspectador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Espectador">
+        <PropertyRef Name="IdPessoaEspectador" />
+      </Principal>
+      <Dependent Role="IngressoEspectador">
+        <PropertyRef Name="IdPessoaEspectador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IngressoApresentador_Evento">
+    <End Role="Evento" Type="Self.Evento" Multiplicity="1" />
+    <End Role="IngressoApresentador" Type="Self.IngressoApresentador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="IdEvento" />
+      </Principal>
+      <Dependent Role="IngressoApresentador">
+        <PropertyRef Name="IdEvento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IngressoEspectador_Evento">
+    <End Role="Evento" Type="Self.Evento" Multiplicity="1" />
+    <End Role="IngressoEspectador" Type="Self.IngressoEspectador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="IdEvento" />
+      </Principal>
+      <Dependent Role="IngressoEspectador">
+        <PropertyRef Name="IdEvento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrganizadorEvento_Evento">
+    <End Role="Evento" Type="Self.Evento" Multiplicity="1" />
+    <End Role="OrganizadorEvento" Type="Self.OrganizadorEvento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="IdEvento" />
+      </Principal>
+      <Dependent Role="OrganizadorEvento">
+        <PropertyRef Name="IdEvento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Funcionario_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Funcionario" Type="Self.Funcionario" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="IdPessoa" />
+      </Principal>
+      <Dependent Role="Funcionario">
+        <PropertyRef Name="IdPessoaFuncionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrganizadorEvento_Funcionario">
+    <End Role="Funcionario" Type="Self.Funcionario" Multiplicity="0..1" />
+    <End Role="OrganizadorEvento" Type="Self.OrganizadorEvento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionario">
+        <PropertyRef Name="IdPessoaFuncionario" />
+      </Principal>
+      <Dependent Role="OrganizadorEvento">
+        <PropertyRef Name="IdPessoaFuncionarioVinculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrganizadorEvento_Funcionario1">
+    <End Role="Funcionario" Type="Self.Funcionario" Multiplicity="0..1" />
+    <End Role="OrganizadorEvento" Type="Self.OrganizadorEvento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionario">
+        <PropertyRef Name="IdPessoaFuncionario" />
+      </Principal>
+      <Dependent Role="OrganizadorEvento">
+        <PropertyRef Name="IdPessoaFuncionarioDesvinculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pagamento_Funcionario">
+    <End Role="Funcionario" Type="Self.Funcionario" Multiplicity="1" />
+    <End Role="Pagamento" Type="Self.Pagamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionario">
+        <PropertyRef Name="IdPessoaFuncionario" />
+      </Principal>
+      <Dependent Role="Pagamento">
+        <PropertyRef Name="IdPessoaFuncionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IngressoApresentador_Pagamento">
+    <End Role="Pagamento" Type="Self.Pagamento" Multiplicity="1" />
+    <End Role="IngressoApresentador" Type="Self.IngressoApresentador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pagamento">
+        <PropertyRef Name="IdPagamento" />
+      </Principal>
+      <Dependent Role="IngressoApresentador">
+        <PropertyRef Name="IdPagamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IngressoEspectador_Pagamento">
+    <End Role="Pagamento" Type="Self.Pagamento" Multiplicity="1" />
+    <End Role="IngressoEspectador" Type="Self.IngressoEspectador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pagamento">
+        <PropertyRef Name="IdPagamento" />
+      </Principal>
+      <Dependent Role="IngressoEspectador">
+        <PropertyRef Name="IdPagamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Organizador_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Organizador" Type="Self.Organizador" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="IdPessoa" />
+      </Principal>
+      <Dependent Role="Organizador">
+        <PropertyRef Name="IdPessoaOrganizador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrganizadorEvento_Organizador">
+    <End Role="Organizador" Type="Self.Organizador" Multiplicity="1" />
+    <End Role="OrganizadorEvento" Type="Self.OrganizadorEvento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organizador">
+        <PropertyRef Name="IdPessoaOrganizador" />
+      </Principal>
+      <Dependent Role="OrganizadorEvento">
+        <PropertyRef Name="IdPessoaOrganizador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pagamento_SituacaoPagamento">
+    <End Role="SituacaoPagamento" Type="Self.SituacaoPagamento" Multiplicity="1" />
+    <End Role="Pagamento" Type="Self.Pagamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SituacaoPagamento">
+        <PropertyRef Name="IdSituacaoPagamento" />
+      </Principal>
+      <Dependent Role="Pagamento">
+        <PropertyRef Name="IdSituacaoPagamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Telefone_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Telefone" Type="Self.Telefone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="IdPessoa" />
+      </Principal>
+      <Dependent Role="Telefone">
+        <PropertyRef Name="IdPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Telefone_Pessoa1">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Telefone" Type="Self.Telefone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="IdPessoa" />
+      </Principal>
+      <Dependent Role="Telefone">
+        <PropertyRef Name="IdPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ApresentadorAtracao">
+    <End Role="Apresentador" Type="Self.Apresentador" Multiplicity="*" />
+    <End Role="Atracao" Type="Self.Atracao" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="SCANBsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Apresentador" EntityType="Self.Apresentador" />
+    <EntitySet Name="Atracao" EntityType="Self.Atracao" />
+    <EntitySet Name="Cargo" EntityType="Self.Cargo" />
+    <EntitySet Name="Espectador" EntityType="Self.Espectador" />
+    <EntitySet Name="Evento" EntityType="Self.Evento" />
+    <EntitySet Name="Funcionario" EntityType="Self.Funcionario" />
+    <EntitySet Name="IngressoApresentador" EntityType="Self.IngressoApresentador" />
+    <EntitySet Name="IngressoEspectador" EntityType="Self.IngressoEspectador" />
+    <EntitySet Name="Organizador" EntityType="Self.Organizador" />
+    <EntitySet Name="OrganizadorEvento" EntityType="Self.OrganizadorEvento" />
+    <EntitySet Name="Pagamento" EntityType="Self.Pagamento" />
+    <EntitySet Name="Pessoa" EntityType="Self.Pessoa" />
+    <EntitySet Name="SituacaoPagamento" EntityType="Self.SituacaoPagamento" />
+    <EntitySet Name="Telefone" EntityType="Self.Telefone" />
+    <EntitySet Name="Veiculo" EntityType="Self.Veiculo" />
+    <AssociationSet Name="FK_Apresentador_Pessoa" Association="Self.FK_Apresentador_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Apresentador" EntitySet="Apresentador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IngressoApresentador_Apresentador" Association="Self.FK_IngressoApresentador_Apresentador">
+      <End Role="Apresentador" EntitySet="Apresentador" />
+      <End Role="IngressoApresentador" EntitySet="IngressoApresentador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Veiculo_Apresentador" Association="Self.FK_Veiculo_Apresentador">
+      <End Role="Apresentador" EntitySet="Apresentador" />
+      <End Role="Veiculo" EntitySet="Veiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Veiculo_Veiculo" Association="Self.FK_Veiculo_Veiculo">
+      <End Role="Apresentador" EntitySet="Apresentador" />
+      <End Role="Veiculo" EntitySet="Veiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Atracao_Evento" Association="Self.FK_Atracao_Evento">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="Atracao" EntitySet="Atracao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Funcionario_Cargo" Association="Self.FK_Funcionario_Cargo">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="Funcionario" EntitySet="Funcionario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Espectador_Pessoa" Association="Self.FK_Espectador_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Espectador" EntitySet="Espectador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IngressoEspectador_Espectador" Association="Self.FK_IngressoEspectador_Espectador">
+      <End Role="Espectador" EntitySet="Espectador" />
+      <End Role="IngressoEspectador" EntitySet="IngressoEspectador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IngressoApresentador_Evento" Association="Self.FK_IngressoApresentador_Evento">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="IngressoApresentador" EntitySet="IngressoApresentador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IngressoEspectador_Evento" Association="Self.FK_IngressoEspectador_Evento">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="IngressoEspectador" EntitySet="IngressoEspectador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrganizadorEvento_Evento" Association="Self.FK_OrganizadorEvento_Evento">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="OrganizadorEvento" EntitySet="OrganizadorEvento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Funcionario_Pessoa" Association="Self.FK_Funcionario_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Funcionario" EntitySet="Funcionario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrganizadorEvento_Funcionario" Association="Self.FK_OrganizadorEvento_Funcionario">
+      <End Role="Funcionario" EntitySet="Funcionario" />
+      <End Role="OrganizadorEvento" EntitySet="OrganizadorEvento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrganizadorEvento_Funcionario1" Association="Self.FK_OrganizadorEvento_Funcionario1">
+      <End Role="Funcionario" EntitySet="Funcionario" />
+      <End Role="OrganizadorEvento" EntitySet="OrganizadorEvento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pagamento_Funcionario" Association="Self.FK_Pagamento_Funcionario">
+      <End Role="Funcionario" EntitySet="Funcionario" />
+      <End Role="Pagamento" EntitySet="Pagamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IngressoApresentador_Pagamento" Association="Self.FK_IngressoApresentador_Pagamento">
+      <End Role="Pagamento" EntitySet="Pagamento" />
+      <End Role="IngressoApresentador" EntitySet="IngressoApresentador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IngressoEspectador_Pagamento" Association="Self.FK_IngressoEspectador_Pagamento">
+      <End Role="Pagamento" EntitySet="Pagamento" />
+      <End Role="IngressoEspectador" EntitySet="IngressoEspectador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Organizador_Pessoa" Association="Self.FK_Organizador_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Organizador" EntitySet="Organizador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrganizadorEvento_Organizador" Association="Self.FK_OrganizadorEvento_Organizador">
+      <End Role="Organizador" EntitySet="Organizador" />
+      <End Role="OrganizadorEvento" EntitySet="OrganizadorEvento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pagamento_SituacaoPagamento" Association="Self.FK_Pagamento_SituacaoPagamento">
+      <End Role="SituacaoPagamento" EntitySet="SituacaoPagamento" />
+      <End Role="Pagamento" EntitySet="Pagamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Telefone_Pessoa" Association="Self.FK_Telefone_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Telefone" EntitySet="Telefone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Telefone_Pessoa1" Association="Self.FK_Telefone_Pessoa1">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Telefone" EntitySet="Telefone" />
+    </AssociationSet>
+    <AssociationSet Name="ApresentadorAtracao" Association="Self.ApresentadorAtracao">
+      <End Role="Apresentador" EntitySet="Apresentador" />
+      <End Role="Atracao" EntitySet="Atracao" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

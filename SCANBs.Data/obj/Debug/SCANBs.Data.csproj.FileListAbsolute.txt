@@ -1,0 +1,10 @@
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\bin\Debug\SCANBs.Data.dll.config
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\bin\Debug\SCANBs.Data.dll
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\bin\Debug\SCANBs.Data.pdb
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\bin\Debug\EntityFramework.dll
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\bin\Debug\EntityFramework.xml
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\obj\Debug\SCANBs.Data.csproj.CoreCompileInputs.cache
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\obj\Debug\SCANBs.Data.dll
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\obj\Debug\SCANBs.Data.pdb

@@ -1,0 +1,14 @@
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Desktop\obj\Release\SCANBs.Desktop.csprojResolveAssemblyReference.cache
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Desktop\obj\Release\SCANBs.Desktop.Forms.CadastroAtração.resources
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Desktop\obj\Release\SCANBs.Desktop.Forms.CadastroEvento.resources
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Desktop\obj\Release\SCANBs.Desktop.Forms.CadastroPessoa.resources
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Desktop\obj\Release\SCANBs.Desktop.Forms.CadastroVeiculo.resources
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Desktop\obj\Release\SCANBs.Desktop.Forms.EditarPessoa.resources
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Desktop\obj\Release\SCANBs.Desktop.Login.resources
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Desktop\obj\Release\SCANBs.Desktop.Forms.RelatorioDeEventos.resources
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Desktop\obj\Release\SCANBs.Desktop.Forms.RelatorioDeVendas.resources
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Desktop\obj\Release\SCANBs.Desktop.Forms.VendasDeIngresso.resources
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Desktop\obj\Release\SCANBs.Desktop.Principal.resources
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Desktop\obj\Release\SCANBs.Desktop.Properties.Resources.resources
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Desktop\obj\Release\SCANBs.Desktop.csproj.GenerateResource.Cache
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Desktop\obj\Release\SCANBs.Desktop.csproj.CoreCompileInputs.cache

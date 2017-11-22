@@ -1,0 +1,14 @@
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\bin\Debug\SCANBs.ApplicationImplementation.dll.config
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\bin\Debug\SCANBs.ApplicationImplementation.dll
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\bin\Debug\SCANBs.ApplicationImplementation.pdb
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\bin\Debug\EntityFramework.dll
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\bin\Debug\SCANBs.Data.dll
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\bin\Debug\SCANBs.Data.pdb
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\bin\Debug\SCANBs.Data.dll.config
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\bin\Debug\EntityFramework.xml
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\obj\Debug\SCANBs.ApplicationImplementation.csprojResolveAssemblyReference.cache
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\obj\Debug\SCANBs.ApplicationImplementation.csproj.CoreCompileInputs.cache
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\obj\Debug\SCANBs.ApplicationImplementation.dll
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\obj\Debug\SCANBs.ApplicationImplementation.pdb

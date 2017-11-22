@@ -1,0 +1,10 @@
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\bin\Release\SCANBs.Data.dll.config
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\bin\Release\SCANBs.Data.dll
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\bin\Release\SCANBs.Data.pdb
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\bin\Release\EntityFramework.dll
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\bin\Release\EntityFramework.xml
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\obj\Release\SCANBs.Data.csproj.CoreCompileInputs.cache
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\obj\Release\SCANBs.Data.dll
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.Data\obj\Release\SCANBs.Data.pdb

@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="row">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Pessoas", "Index", "Pessoas", new { area = "" }, new { @class = "navbar-brand" })</li>
+        <li>@Html.ActionLink("Eventos", "Index", "Eventos", new { area = "" }, new { @class = "navbar-brand" })</li>
+        <li>@Html.ActionLink("Vendas", "Vendas", "Vendas", new { area = "" }, new { @class = "navbar-brand" })</li>
+    </ul>
+</div>

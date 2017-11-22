@@ -1,0 +1,2 @@
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\obj\Release\SCANBs.ApplicationImplementation.csprojResolveAssemblyReference.cache
+C:\Users\Cesar Murilo\Desktop\SCANBs\ShowCarsAndBikes\SCANBs.ApplicationImplementation\obj\Release\SCANBs.ApplicationImplementation.csproj.CoreCompileInputs.cache

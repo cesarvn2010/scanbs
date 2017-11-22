@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SCANBsModelStoreContainer" CdmEntityContainer="SCANBsEntities">
+    <EntitySetMapping Name="Administrador">
+      <EntityTypeMapping TypeName="SCANBsModel.Administrador">
+        <MappingFragment StoreEntitySet="Administrador">
+          <ScalarProperty Name="IdPessoaAdministrador" ColumnName="IdPessoaAdministrador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Apresentador">
+      <EntityTypeMapping TypeName="SCANBsModel.Apresentador">
+        <MappingFragment StoreEntitySet="Apresentador">
+          <ScalarProperty Name="IdPessoaApresentador" ColumnName="IdPessoaApresentador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Atracao">
+      <EntityTypeMapping TypeName="SCANBsModel.Atracao">
+        <MappingFragment StoreEntitySet="Atracao">
+          <ScalarProperty Name="IdAtracao" ColumnName="IdAtracao" />
+          <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+          <ScalarProperty Name="ImagemAtracao" ColumnName="ImagemAtracao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Espectador">
+      <EntityTypeMapping TypeName="SCANBsModel.Espectador">
+        <MappingFragment StoreEntitySet="Espectador">
+          <ScalarProperty Name="IdPessoaEspectador" ColumnName="IdPessoaEspectador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Evento">
+      <EntityTypeMapping TypeName="SCANBsModel.Evento">
+        <MappingFragment StoreEntitySet="Evento">
+          <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+          <ScalarProperty Name="NomeEvento" ColumnName="NomeEvento" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFinal" ColumnName="DataFinal" />
+          <ScalarProperty Name="ImagemEvento" ColumnName="ImagemEvento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Funcionario">
+      <EntityTypeMapping TypeName="SCANBsModel.Funcionario">
+        <MappingFragment StoreEntitySet="Funcionario">
+          <ScalarProperty Name="IdPessoaFuncionario" ColumnName="IdPessoaFuncionario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IngressoApresentador">
+      <EntityTypeMapping TypeName="SCANBsModel.IngressoApresentador">
+        <MappingFragment StoreEntitySet="IngressoApresentador">
+          <ScalarProperty Name="IdIngressoApresentador" ColumnName="IdIngressoApresentador" />
+          <ScalarProperty Name="IdPessoaApresentador" ColumnName="IdPessoaApresentador" />
+          <ScalarProperty Name="IdPagamento" ColumnName="IdPagamento" />
+          <ScalarProperty Name="ValorSugestivo" ColumnName="ValorSugestivo" />
+          <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IngressoEspectador">
+      <EntityTypeMapping TypeName="SCANBsModel.IngressoEspectador">
+        <MappingFragment StoreEntitySet="IngressoEspectador">
+          <ScalarProperty Name="IdIngressoEspectador" ColumnName="IdIngressoEspectador" />
+          <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+          <ScalarProperty Name="IdPessoaEspectador" ColumnName="IdPessoaEspectador" />
+          <ScalarProperty Name="ValorSugestivo" ColumnName="ValorSugestivo" />
+          <ScalarProperty Name="IdPagamento" ColumnName="IdPagamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organizador">
+      <EntityTypeMapping TypeName="SCANBsModel.Organizador">
+        <MappingFragment StoreEntitySet="Organizador">
+          <ScalarProperty Name="IdPessoaOrganizador" ColumnName="IdPessoaOrganizador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pagamento">
+      <EntityTypeMapping TypeName="SCANBsModel.Pagamento">
+        <MappingFragment StoreEntitySet="Pagamento">
+          <ScalarProperty Name="DataPagamento" ColumnName="DataPagamento" />
+          <ScalarProperty Name="IdPagamento" ColumnName="IdPagamento" />
+          <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+          <ScalarProperty Name="Desconto" ColumnName="Desconto" />
+          <ScalarProperty Name="IdPessoaVendedor" ColumnName="IdPessoaVendedor" />
+          <ScalarProperty Name="IdSituacaoPagamento" ColumnName="IdSituacaoPagamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pessoa">
+      <EntityTypeMapping TypeName="SCANBsModel.Pessoa">
+        <MappingFragment StoreEntitySet="Pessoa">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+          <ScalarProperty Name="NomeCompleto" ColumnName="NomeCompleto" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="FotoPessoa" ColumnName="FotoPessoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SituacaoPagamento">
+      <EntityTypeMapping TypeName="SCANBsModel.SituacaoPagamento">
+        <MappingFragment StoreEntitySet="SituacaoPagamento">
+          <ScalarProperty Name="IdSituacaoPagamento" ColumnName="IdSituacaoPagamento" />
+          <ScalarProperty Name="DescricaoSituacaoPagamento" ColumnName="DescricaoSituacaoPagamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Telefone">
+      <EntityTypeMapping TypeName="SCANBsModel.Telefone">
+        <MappingFragment StoreEntitySet="Telefone">
+          <ScalarProperty Name="IdTelefone" ColumnName="IdTelefone" />
+          <ScalarProperty Name="NumeroTelefone" ColumnName="NumeroTelefone" />
+          <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Veiculo">
+      <EntityTypeMapping TypeName="SCANBsModel.Veiculo">
+        <MappingFragment StoreEntitySet="Veiculo">
+          <ScalarProperty Name="Ano" ColumnName="Ano" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="IdVeiculo" ColumnName="IdVeiculo" />
+          <ScalarProperty Name="FotoVeiculo" ColumnName="FotoVeiculo" />
+          <ScalarProperty Name="IdPessoaApresentador" ColumnName="IdPessoaApresentador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendedor">
+      <EntityTypeMapping TypeName="SCANBsModel.Vendedor">
+        <MappingFragment StoreEntitySet="Vendedor">
+          <ScalarProperty Name="IdPessoaVendedor" ColumnName="IdPessoaVendedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ApresentadorAtracao" TypeName="SCANBsModel.ApresentadorAtracao" StoreEntitySet="ApresentadorAtracao">
+      <EndProperty Name="Apresentador">
+        <ScalarProperty Name="IdPessoaApresentador" ColumnName="IdPessoaApresentador" />
+      </EndProperty>
+      <EndProperty Name="Atracao">
+        <ScalarProperty Name="IdAtracao" ColumnName="IdAtracao" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OrganizadorEvento" TypeName="SCANBsModel.OrganizadorEvento" StoreEntitySet="OrganizadorEvento">
+      <EndProperty Name="Evento">
+        <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+      </EndProperty>
+      <EndProperty Name="Organizador">
+        <ScalarProperty Name="IdPessoaOrganizador" ColumnName="IdPessoaOrganizador" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="height:5em; ">
+        <div class="container">
+            <div class="navbar-header" style="font-size: 30px; margin-top: 0.2em;">
+                
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Texto do link, nome da página, nome do controlador -->
+                @Html.ActionLink("Show Cars and Bikes", "Index", "Home", new { area = "" }, new { @class = "navbar-header" })
+            </div>
+
+        </div>
+    </div>
+    <div class="container body-content" style="margin-top: 5em">
+        @RenderBody()
+        
+        <hr />
+        <footer style="position: fixed;
+                
+                background-color: black;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                height: 40px;
+                width: 100%;
+                box-shadow: 0px 0px 10px black;
+                z-index: 1;
+                bottom: 0px;
+                margin: 0px;
+                left: 0px;
+">
+            <div class="navbar-collapse collapse" style="right: 0; float: right;">
+                <style >
+                    a {
+                        font-size: 1.2em;
+                        text-decoration: none;
+                        color: dodgerblue;
+                    }
+
+        </style>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

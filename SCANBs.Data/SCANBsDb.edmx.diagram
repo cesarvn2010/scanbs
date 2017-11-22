@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="df30cc9862734a7f825f6cccb0a43f0c" Name="Diagram1" ZoomLevel="91">
+        <EntityTypeShape EntityType="SCANBsModel.Apresentador" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCANBsModel.Atracao" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCANBsModel.Cargo" Width="1.5" PointX="5.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCANBsModel.Espectador" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCANBsModel.Evento" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCANBsModel.Funcionario" Width="1.5" PointX="8" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCANBsModel.IngressoApresentador" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCANBsModel.IngressoEspectador" Width="1.5" PointX="8.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCANBsModel.Organizador" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCANBsModel.OrganizadorEvento" Width="1.5" PointX="10.25" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCANBsModel.Pagamento" Width="1.5" PointX="13.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCANBsModel.Pessoa" Width="1.5" PointX="0.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCANBsModel.SituacaoPagamento" Width="1.5" PointX="11" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCANBsModel.Telefone" Width="1.5" PointX="3" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCANBsModel.Veiculo" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
+        <AssociationConnector Association="SCANBsModel.FK_Apresentador_Pessoa" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_IngressoApresentador_Apresentador" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_Veiculo_Apresentador" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_Veiculo_Veiculo" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_Atracao_Evento" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_Funcionario_Cargo" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_Espectador_Pessoa" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_IngressoEspectador_Espectador" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_IngressoApresentador_Evento" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_IngressoEspectador_Evento" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_OrganizadorEvento_Evento" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_Funcionario_Pessoa" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_OrganizadorEvento_Funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_OrganizadorEvento_Funcionario1" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_Pagamento_Funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_IngressoApresentador_Pagamento" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_IngressoEspectador_Pagamento" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_Organizador_Pessoa" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_OrganizadorEvento_Organizador" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_Pagamento_SituacaoPagamento" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_Telefone_Pessoa" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.FK_Telefone_Pessoa1" ManuallyRouted="false" />
+        <AssociationConnector Association="SCANBsModel.ApresentadorAtracao" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
